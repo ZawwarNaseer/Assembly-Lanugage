@@ -1,0 +1,32 @@
+			
+		# get and store user inputed first number to multiply
+		read 
+		store a
+
+		# get and store user inputed second number to multiply
+		read
+		store n
+	
+loop:		
+		# nth increment of sum by a and store new sum
+		load sum
+		add a
+		store sum
+
+		# de-increment n and store for next n
+		load n
+		sub ONE
+		store n
+
+		# loop until n is no longer positive
+		jpos loop
+
+		# load and output result
+		load sum
+		write
+		halt
+
+a:		0
+ONE:	1
+sum:	0
+n:		0

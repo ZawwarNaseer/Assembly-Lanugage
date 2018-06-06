@@ -1,0 +1,31 @@
+				# load an instruction and store ahead
+loader:			load 0
+injectLoc:		store inject
+
+				# get ready to load next instruction
+				load loader
+				add ONE
+				store loader
+
+				# Ensure last loader is saved at inject
+				store inject
+
+				# move pointer to inject to
+				load injectLoc
+				add ONE
+				store injectLoc
+
+				# Ensure last injectLoc is saved at store_inject
+				store store_inject
+
+				# loop for each line in virus
+				load length
+				sub loader
+				jpos loader
+
+length:			load 15
+ONE: 			1
+
+				# give initial injection tag
+inject: 		halt
+store_inject: 	halt

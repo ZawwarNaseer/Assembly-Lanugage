@@ -1,0 +1,36 @@
+		# Read ith prime number and write
+loadp:	load p
+		write
+
+		# increment loadp for loading next prime
+		load loadp
+		add ONE
+		store loadp
+
+		# increment i and store for next prime number
+		load i
+		add ONE
+		store i
+
+		# loop until n-i is no longer positive (n times)
+		load n
+		sub i
+		jpos loadp
+		halt
+
+# Variables
+ONE:	1
+n:		12
+i:		0
+p:		2		
+		3
+		5
+		7
+		11
+		13
+		17
+		19
+		23
+		29
+		31
+		37

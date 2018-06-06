@@ -1,0 +1,25 @@
+		# get and store user inputed n numbers to sum
+		read
+		store n
+loop:	
+		# load sum, sum with n, and store
+		load sum
+		add n
+		store sum
+
+		# de-increment n and store for next n
+		load n
+		sub one
+		store n
+
+		# stop summing at 0
+		jpos loop
+
+		# load and output the result
+		load sum
+		write
+		halt
+
+one:	1
+n:		0
+sum:	0
